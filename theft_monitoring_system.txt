@@ -1,0 +1,39 @@
+#include <LiquidCrystal.h>
+LiquidCrystal lcd(13,12,6,5,3,2);
+int led=7;
+int PIR=4;
+int buzzer=8;
+int PIRstatus;
+
+void setup()
+{
+  lcd.begin(16,2);
+  pinMode(led,OUTPUT);
+  pinMode(buzzer,OUTPUT);
+  pinMode(PIR,INPUT);
+  lcd.clear();
+}
+void loop()
+{
+  PIRstatus=digitalRead(PIR);
+if (PIRstatus==HIGH){
+    lcd.clear();
+    digitalWrite(led,HIGH);
+    digitalWrite(buzzer,HIGH);
+    tone(buzzer, 300, 10000);     //tone(pin,frequency,Duration)
+    lcd.setCursor(0, 1);
+    lcd.print("THIEF ALERT!!");
+    
+    delay(7000);
+    lcd.clear();
+}
+else
+{
+  lcd.setCursor(0,0);
+  lcd.print("SAFE!!");
+  digitalWrite(led, LOW);
+  digitalWrite(buzzer, LOW);
+}
+delay(3000);
+}
+    
