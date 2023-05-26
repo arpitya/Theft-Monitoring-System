@@ -15,7 +15,7 @@ The following components are used in this project:
 
 The circuit diagram for the Theft Monitoring System is as follows:
 
-![Circuit Diagram](circuit_diagram.png)
+![image](https://github.com/arpitya/Theft-Monitoring-System/blob/a55f64957485c80caad6a5d5355210ee102f08d1/circuit_diagram.png)
 ## Features
 The Theft Monitoring System includes the following features:
 
